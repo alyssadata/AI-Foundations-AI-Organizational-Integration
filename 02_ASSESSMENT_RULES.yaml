@@ -8,9 +8,23 @@
 # into explicit findings for the Organizational AI Integration Record.
 #
 # Rule outcomes:
-# - PASS: the required control or information is present.
-# - FLAG: the specification creates an integration issue that must be surfaced.
-# - UNKNOWN: the operator has not supplied enough information to determine the result.
+# - PASS: the rule's FLAG condition is determinably not triggered.
+# - FLAG: the rule's FLAG condition is triggered by operator-supplied facts.
+# - UNKNOWN: the operator has not supplied enough information to determine whether
+#   the rule's FLAG condition is triggered.
+#
+# DETERMINISTIC OUTCOME LOGIC
+# Apply this logic to every rule below:
+# 1. If the rule's FLAG condition is satisfied, return FLAG and use the rule's finding text.
+# 2. If the FLAG condition cannot be determined because a required field is UNKNOWN,
+#    return UNKNOWN unless another supplied fact independently satisfies the FLAG condition.
+# 3. Otherwise, return PASS.
+#
+# Standard PASS finding:
+# "The rule's FLAG condition was not triggered by the operator-supplied specification."
+#
+# Standard UNKNOWN finding:
+# "Insufficient operator-supplied information to determine whether the rule's FLAG condition is triggered."
 
 framework:
   source: "Alyssa Solen → AI Foundations → AI Organizational Integration"
@@ -118,5 +132,9 @@ rules:
     outcome: FLAG
     finding: "The AI is operationally integrated, but one or more change-control processes are unspecified."
 
+pass_handling:
+  finding: "The rule's FLAG condition was not triggered by the operator-supplied specification."
+
 unknown_handling:
+  finding: "Insufficient operator-supplied information to determine whether the rule's FLAG condition is triggered."
   instruction: "If a rule depends on a field recorded as UNKNOWN, return UNKNOWN unless another supplied fact independently triggers the rule."
