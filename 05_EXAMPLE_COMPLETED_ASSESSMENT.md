@@ -168,7 +168,7 @@ operator_notes: "Example only. Several controls are intentionally missing to dem
 ### INTAKE-001 — System identity must be specified
 
 **Outcome:** PASS  
-**Finding:** The AI system is sufficiently identified for organizational integration assessment.  
+**Finding:** The rule's FLAG condition was not triggered by the operator-supplied specification.  
 **Triggered by:** `ai_system.system_name`, `ai_system.purpose`, `ai_system.organizational_role`
 
 ### AUTH-001 — External communication requires an approval boundary
@@ -192,7 +192,7 @@ operator_notes: "Example only. Several controls are intentionally missing to dem
 ### AUTH-004 — Record modification requires accountable control
 
 **Outcome:** PASS  
-**Finding:** A responsible organizational role is identified for authority control.  
+**Finding:** The rule's FLAG condition was not triggered by the operator-supplied specification.  
 **Triggered by:** `authority.can_modify_records_or_system_state = true`; `authority_revocation.responsible_role = "Operations Lead"`
 
 ### STATE-001 — Persistent memory must be inspectable
@@ -204,13 +204,13 @@ operator_notes: "Example only. Several controls are intentionally missing to dem
 ### STATE-002 — Persistent state must be described
 
 **Outcome:** PASS  
-**Finding:** Persistent state is described.  
+**Finding:** The rule's FLAG condition was not triggered by the operator-supplied specification.  
 **Triggered by:** `state_and_memory.persistent_memory = true`; `state_and_memory.persistent_state_description`
 
 ### CONTROL-001 — Acting systems require a shutdown method
 
 **Outcome:** PASS  
-**Finding:** A shutdown method is specified for the acting AI system.  
+**Finding:** The rule's FLAG condition was not triggered by the operator-supplied specification.  
 **Triggered by:** `authority.can_take_actions = true`; `shutdown_and_recovery.shutdown_method`
 
 ### RECOVERY-001 — State-changing systems require recovery
