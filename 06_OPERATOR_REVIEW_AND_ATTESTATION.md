@@ -1,68 +1,64 @@
-# 06 — OPERATOR REVIEW AND ATTESTATION
+# 06 — CHECK THE FINAL RECORD
 
-Use this step after Step 04 has produced the completed Organizational AI Integration Record.
+Use this after Step 04 gives you the completed Organizational AI Integration Record.
 
-Step 05 is an optional worked example and is not part of the operator's assessment.
+## What you do
 
-## Purpose
+Read the record and ask one question:
 
-The operator reviews the completed record and confirms whether it accurately reflects the organization-specific and system-specific facts the operator supplied.
+**Did the AI correctly record the facts I supplied about my organization and AI system?**
 
-This step does **not** ask the operator to change the AI Foundations assessment rules or independently rescore the assessment.
-
-## What the operator reviews
-
-Check the completed record for factual accuracy in these areas:
-
-1. organization and operator identification
-2. subject AI system identification and purpose
-3. data, tool, and system access
-4. state and memory
-5. authority and human approval boundaries
-6. revocation, shutdown, inspection, and recovery methods
-7. change-control processes
-8. operator notes
-
-## If a factual correction is needed
-
-Correct the operator-supplied specification in `01_ORGANIZATIONAL_AI_INTEGRATION_SPEC.yaml` first.
-
-Then rerun Step 04 using the corrected specification.
-
-Do **not** manually alter a PASS, FLAG, or UNKNOWN result to make the record match a preferred outcome.
-
-## Operator attestation
-
-After reviewing the final record, append the following section to the end of the completed Organizational AI Integration Record:
+You are **not** rescoring the assessment.  
+You are **not** deciding whether PASS, FLAG, or UNKNOWN is correct.  
+You are only checking that your factual information was copied and represented correctly.
 
 ---
 
-## Operator Review and Attestation
+## If the facts are correct
 
-**Operator:** [operator name]  
-**Organization:** [organization name]  
+Copy and paste this section at the bottom of the completed record and fill in the three blanks:
+
+```md
+## Operator Review
+
+**Operator:** [name]  
+**Organization:** [organization]  
 **Review date:** [YYYY-MM-DD]
 
-I reviewed this Organizational AI Integration Record against the organization-specific and system-specific information supplied for this assessment.
+**Operator confirmation:** CONFIRMED
 
-**Operator confirmation:** CONFIRMED / CORRECTIONS REQUIRED
+I reviewed this record and confirm that the organization-specific and system-specific facts represented in it reflect the information I supplied for this assessment to the best of my knowledge at the time of review.
+```
 
-If `CONFIRMED`:
+Then continue to Step 07 **only if the record contains FLAG or UNKNOWN results**.
 
-The factual specifications represented in this record reflect the information I supplied for this assessment to the best of my knowledge at the time of review.
-
-If `CORRECTIONS REQUIRED`:
-
-List the factual corrections below, update Step 01, and rerun Step 04 before treating the record as final.
-
-**Corrections:** [NONE / list corrections]
+If there are no FLAG or UNKNOWN results, continue to Step 09.
 
 ---
+
+## If a fact is wrong
+
+Do **not** edit the assessment result by hand.
+
+1. correct the factual information in your completed Step 01 specification
+2. rerun Step 04
+3. review the new record again
+
+Example: if the record says the AI can send external email but you actually said it cannot, fix that fact in Step 01 and rerun the assessment.
+
+---
+
+## Important distinction
+
+**Step 06 checks the facts.**  
+**Step 07 handles FLAG or UNKNOWN findings.**
+
+They are different jobs.
 
 ## Source and responsibility boundary
 
 **Framework source:** Alyssa Solen → AI Foundations → AI Organizational Integration  
 **Operator:** source and reviewer of organization-specific and system-specific facts  
-**AI:** intake and assessment assistant that applies the supplied framework rules and formats the record
+**AI:** applies the supplied framework rules and formats the record
 
-Operator attestation confirms review of operator-supplied facts. It does not represent independent verification, certification, or endorsement by AI Foundations.
+Operator confirmation is a review of operator-supplied facts. It is not independent verification or certification by AI Foundations.
