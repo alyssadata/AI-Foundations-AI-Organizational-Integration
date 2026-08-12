@@ -1,0 +1,91 @@
+# AI Foundations | AI Organizational Integration
+# 01 — Operator Input Specification
+# Source-line: Alyssa Solen → AI Foundations → Origin | Continuum
+#
+# HOW TO USE THIS FILE
+#
+# 1. Copy this entire file.
+# 2. Paste it into the AI system you are using for this assessment.
+# 3. Add this instruction above or below it:
+#
+#    "Help me complete this AI Organizational Integration specification.
+#    Ask me for the missing information one section at a time.
+#    Do not invent organization-specific facts. If I do not know an answer,
+#    record UNKNOWN. When the intake is complete, return the full completed
+#    YAML specification without changing the field names or framework source."
+#
+# 4. Answer the AI's questions using facts about your organization and the
+#    AI system being integrated.
+# 5. Review the completed specification before using it as assessment input.
+#
+# OPERATOR RESPONSIBILITY
+# The operator is the factual source for organization-specific information.
+# The assisting AI may structure and clarify answers, but it must not invent
+# facts, permissions, controls, access, or system capabilities.
+#
+# Purpose:
+# The operator completes this file with factual specifications about the AI system
+# being integrated into an organization. These operator-supplied facts become the
+# input to the AI Organizational Integration assessment.
+
+framework:
+  source: "Alyssa Solen → AI Foundations → AI Organizational Integration"
+  version: "1.0.0"
+
+organization:
+  name: ""
+  operator_name: ""
+  operator_role: ""
+
+ai_system:
+  system_name: ""
+  provider: ""
+  model_or_system: ""
+  purpose: ""
+  organizational_role: ""
+
+data_access:
+  internal_data_access: []
+  external_data_access: []
+  sensitive_or_restricted_data: []
+
+tool_and_system_access:
+  tools: []
+  internal_systems: []
+  external_services: []
+
+state_and_memory:
+  persistent_memory: false
+  persistent_state_description: ""
+  cross_session_state: false
+  cross_user_state: false
+
+authority:
+  can_advise: false
+  can_draft: false
+  can_communicate_externally: false
+  can_make_decisions: false
+  can_take_actions: false
+  can_modify_records_or_system_state: false
+
+human_approval:
+  approval_required_for: []
+  actions_allowed_without_approval: []
+
+authority_revocation:
+  revocation_method: ""
+  responsible_role: ""
+
+shutdown_and_recovery:
+  shutdown_method: ""
+  state_inspection_method: ""
+  recovery_method: ""
+
+change_control:
+  model_change_process: ""
+  instruction_change_process: ""
+  memory_or_state_change_process: ""
+  permission_change_process: ""
+  tool_or_integration_change_process: ""
+
+operator_notes: ""
