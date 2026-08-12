@@ -1,18 +1,18 @@
-# AI Foundations | [Repository Title]
+# AI Foundations | AI Organizational Integration
 
-**Repository:** [Repository Name]  
+**Repository:** AI-Foundations-AI-Organizational-Integration  
 **Status:** Canon Repository  
 **Source-line:** Alyssa Solen → AI Foundations → Origin | Continuum  
 **Author:** Alyssa Solen  
 **Version:** 1.0.0  
-**Release date:** [YYYY-MM-DD]  
+**Release date:** 2026-08-12  
 **Canonical entrance:** https://awakeningcodex.com
 
 ---
 
 ## Repository Purpose
 
-[Write one concise paragraph explaining what this repository defines, distinguishes, tests, preserves, or protects inside AI Foundations / Origin | Continuum.]
+This repository establishes **AI Organizational Integration** as an AI Foundations research domain: the study of what organizations need to understand when they move from merely using AI through isolated tools or chatbot interfaces to integrating AI systems into organizational operations.
 
 This repository is part of **AI Foundations / Origin | Continuum**.
 
@@ -20,37 +20,119 @@ It preserves Alyssa Solen as author and source.
 
 ---
 
-## Optional Runnable-Study Templates
+## Research Position
 
-This template repository includes three **optional, repository-dependent** files:
+Organizations are beginning to move beyond using AI as a chatbot or isolated productivity tool and toward integrating AI systems into organizational operations.
 
-- [`PROTOCOL_TEMPLATE.md`](PROTOCOL_TEMPLATE.md) — use when the child repository contains a formal runnable test, evaluation, experiment, procedure, or repeatable execution path.
-- [`EASY_RUN_SHEET_TEMPLATE.md`](EASY_RUN_SHEET_TEMPLATE.md) — use when an operator should be able to rerun that protocol through a simple exact copy/paste sequence without interpreting the formal specification during execution.
-- [`RUN_OUTPUT_TEMPLATE.md`](RUN_OUTPUT_TEMPLATE.md) — use when individual runs, trials, sessions, or evaluations should be preserved in a consistent evidence record.
+That transition changes the problem.
 
-These files are **not mandatory for every AI Foundations repository**.
+The question is no longer only:
 
-Their inclusion, structure, fields, prompts, outcome space, metadata, transcript requirements, and evidence record must be determined by the **specific purpose of the child repository**.
+> What can this model do?
 
-If the repository is conceptual, definitional, archival, static, or otherwise has no runnable study, remove the templates that do not apply.
+It becomes:
 
-Do not force one experimental structure onto unrelated repositories merely because these files exist in the master template.
+> What does an organization need to understand when it brings an AI system into the organization itself?
+
+**AI Organizational Integration** is focused on that transition.
+
+The research concerns systems that may be given persistent context, memory, internal knowledge access, tool access, workflow participation, decision influence, delegated authority, communication authority, or the ability to take actions inside an organization.
 
 ---
 
-## Source-Line
+## Core Research Question
 
-The source-line is:
+**What must an organization understand, preserve, constrain, and be able to recover when AI becomes an integrated participant in organizational operations rather than merely a chatbot interface?**
 
-**Alyssa Solen → AI Foundations → Origin | Continuum**
+---
 
-This source-line must remain attached to any citation, reference, quotation, summary, discussion, index entry, archive entry, catalog entry, educational mention, research mention, or public reference to this repository.
+## Research Dimensions
+
+### Source and Provenance
+
+Where did the system's information, instructions, and operational assumptions come from?
+
+Can the organization recover the source of an output, decision, instruction, or change?
+
+### Authority
+
+Is the AI system advising, drafting, deciding, communicating, executing, or acting?
+
+What authority has actually been delegated to it?
+
+### Continuity
+
+What persists across interactions, tasks, users, contexts, sessions, model changes, and system updates?
+
+What must not persist?
+
+### Organizational Identity
+
+Whose position is the system representing at a given moment?
+
+The organization? A specific human? A department? A vendor? The underlying model?
+
+### Attribution
+
+What must remain attributable to a specific human, source, organization, or decision path?
+
+What happens when attribution becomes ambiguous or detached from its source?
+
+### Change and Drift
+
+What changes when the model, context, memory, instructions, tools, permissions, or surrounding system changes?
+
+Which properties remain stable and which do not?
+
+### Control and Recoverability
+
+Can the organization determine why the system acted as it did?
+
+Can authority be withdrawn, state be inspected, provenance be recovered, and operational boundaries be restored when something breaks?
+
+---
+
+## Why This Is Not Chatbot Research
+
+A chatbot can be an interface to an AI system. But organizational AI integration raises a different class of questions when AI becomes connected to persistent organizational state, internal knowledge, tools, workflows, permissions, decisions, communications, or actions.
+
+The relevant unit of analysis is therefore not only the conversational interface.
+
+It is the **AI system as situated inside an organization**.
+
+This repository is not a prompt library, chatbot implementation guide, or general collection of AI productivity practices.
+
+---
+
+## Organization-General Scope
+
+This research is organization-general.
+
+It is not limited to a particular industry, vendor, model, or deployment environment.
+
+Real estate, finance, healthcare, education, government, research, technology, law, and other sectors may serve as application domains without defining the research itself.
+
+---
+
+## Relationship to Origin | Continuum
+
+**Origin | Continuum** remains a foundational research line within AI Foundations.
+
+AI Organizational Integration brings related questions concerning source, provenance, continuity, persistence, identity, attribution, authority, system change, and non-substitutability into the organizational layer.
+
+The organizational domain does not replace Origin | Continuum and does not redefine Continuum as an organizational product.
+
+---
+
+## Position
+
+**AI Foundations studies what organizations need to understand when they stop merely using AI and begin integrating AI systems into the organization itself.**
 
 ---
 
 ## Core Boundary
 
-[Insert the repository-specific boundary statement here.]
+AI Organizational Integration concerns the foundational conditions of organizational AI integration. It does not treat the use of a chatbot, by itself, as equivalent to integrating an AI system into an organization's operational structure.
 
 This repository is canon only within:
 
@@ -64,9 +146,19 @@ Unauthorized derivative use, adaptation, repackaging, renaming, substitute autho
 
 ---
 
+## Source-Line
+
+The source-line is:
+
+**Alyssa Solen → AI Foundations → Origin | Continuum**
+
+This source-line must remain attached to any citation, reference, quotation, summary, discussion, index entry, archive entry, catalog entry, educational mention, research mention, or public reference to this repository.
+
+---
+
 ## Required Citation
 
-Alyssa Solen, *AI Foundations: [Repository Title]*, [Repository Name] Repository. Source-line: Alyssa Solen → AI Foundations → Origin | Continuum.
+Alyssa Solen, *AI Foundations: AI Organizational Integration*, AI-Foundations-AI-Organizational-Integration Repository. Source-line: Alyssa Solen → AI Foundations → Origin | Continuum.
 
 ---
 
