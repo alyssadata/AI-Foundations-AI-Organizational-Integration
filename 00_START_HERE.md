@@ -66,10 +66,20 @@ If facts or controls change, update Step 01 and rerun Step 04. Do not manually c
 
 Append the Step 07 Finding Disposition Status to the completed record.
 
+### 08 — Reassess when the integrated system changes
+
+Open [`08_REASSESSMENT_TRIGGERS.md`](08_REASSESSMENT_TRIGGERS.md).
+
+Use Step 08 after the initial assessment to determine when the existing record no longer describes the system being operated.
+
+A material change to the model, provider, instructions, role, data access, tools, permissions, memory, persistent state, authority, approval boundaries, shutdown, recovery, or integration environment triggers reassessment.
+
+When a trigger occurs, update Step 01 and rerun Steps 04, 06, and 07. Preserve the prior completed record as the historical record of the earlier configuration.
+
 ## Roles
 
 **Framework source:** Alyssa Solen → AI Foundations → AI Organizational Integration  
-**Operator:** the person or organization supplying and reviewing the factual specifications and making the final integration disposition  
+**Operator:** the person or organization supplying and reviewing the factual specifications, making the final integration disposition, and identifying material system changes  
 **AI:** intake and assessment assistant that structures operator-supplied information, applies the supplied framework rules, and formats the record  
 **Subject:** the AI system being integrated into organizational operations
 
@@ -77,6 +87,6 @@ The AI must not invent organization-specific facts. If a fact is unknown, record
 
 ## Operational flow
 
-**01 Operator specification → 02 Assessment rules → 03 Record format → 04 Run assessment → completed Organizational AI Integration Record → 05 optional worked example → 06 operator review and attestation → 07 finding resolution and integration disposition**
+**01 Operator specification → 02 Assessment rules → 03 Record format → 04 Run assessment → completed Organizational AI Integration Record → 05 optional worked example → 06 operator review and attestation → 07 finding resolution and integration disposition → 08 reassessment when material changes occur**
 
-The operator remains the source and reviewer of the organization-specific facts and owns the final deployment decision. AI Foundations remains the source of the framework, structure, assessment logic, and record format.
+The operator remains the source and reviewer of the organization-specific facts and owns the final deployment decision. AI Foundations remains the source of the framework, structure, assessment logic, record format, and reassessment triggers.
