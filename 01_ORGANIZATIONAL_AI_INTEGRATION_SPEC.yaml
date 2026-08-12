@@ -32,6 +32,9 @@ framework:
   source: "Alyssa Solen → AI Foundations → AI Organizational Integration"
   version: "1.0.0"
 
+assessment:
+  date: ""
+
 organization:
   name: ""
   operator_name: ""
