@@ -1,95 +1,89 @@
-# 07 — RESOLVE FLAG AND UNKNOWN RESULTS
+# 07 — HANDLE FLAG AND UNKNOWN RESULTS
 
-Use this step after the operator has reviewed and attested to the completed Organizational AI Integration Record.
+Use this step only if the completed Organizational AI Integration Record contains one or more `FLAG` or `UNKNOWN` results.
 
-## Purpose
+If every result is `PASS`, skip Step 07 and continue to Step 09.
 
-Step 07 gives the organization an explicit disposition for every assessment result that is not `PASS`.
+## What this step does
 
-A `FLAG` means the current operator-supplied specification triggers an integration gap under the current AI Foundations rule set.
+For each non-PASS result, the organization makes one simple choice.
 
-An `UNKNOWN` means the current operator-supplied specification does not contain enough information to determine the rule outcome.
+### If the result is FLAG
 
-Neither result should disappear through manual editing.
+Choose one:
 
-## For every FLAG
+- `FIX IT` — the organization will change the relevant control, permission, process, or system configuration.
+- `KEEP OPEN` — the organization is not fixing it now and wants the finding to remain visible.
+- `DEFER` — the organization does not want to proceed with this integration yet.
 
-Create one finding disposition entry:
+### If the result is UNKNOWN
 
-### [RULE ID] — [Rule name]
+Choose one:
 
-**Current outcome:** FLAG  
-**Finding:** [copy the finding from the completed record]  
-**Triggered by:** [copy the triggering operator-supplied field(s)]  
-**Operator disposition:** RESOLVE / ACCEPT AS OPEN / DO NOT INTEGRATE YET  
-**Planned action:** [operator supplied]  
-**Responsible role:** [operator supplied]  
-**Target date:** [operator supplied or UNKNOWN]  
-**Evidence of resolution:** [operator supplied or PENDING]
+- `SUPPLY INFORMATION` — provide the missing factual information.
+- `LEAVE UNKNOWN` — the information is not currently available.
 
-### If the disposition is RESOLVE
+## Easiest way to do Step 07
 
-Update the relevant factual specification in Step 01 only after the organizational control, process, permission, or system configuration has actually changed.
+Paste your completed Organizational AI Integration Record into the AI.
 
-Then rerun Step 04.
+Then copy and paste this prompt:
 
-Do not change Step 01 merely to make a FLAG become PASS.
+```text
+Help me complete Step 07 of the AI Foundations AI Organizational Integration framework.
 
-### If the disposition is ACCEPT AS OPEN
+Read the completed Organizational AI Integration Record I provided.
 
-Keep the FLAG in the record and document why the organization is proceeding with the finding still open.
+Find every result marked FLAG or UNKNOWN.
 
-The outcome remains `FLAG`.
+Ask me about them one at a time.
 
-### If the disposition is DO NOT INTEGRATE YET
+For each FLAG, ask me to choose exactly one:
+FIX IT / KEEP OPEN / DEFER
 
-Record that the organization is deferring integration until the finding is addressed.
+For each UNKNOWN, ask me to choose exactly one:
+SUPPLY INFORMATION / LEAVE UNKNOWN
 
-## For every UNKNOWN
+If I choose FIX IT or SUPPLY INFORMATION, ask me for the factual change or missing information. Do not invent it.
 
-Create one unresolved-information entry:
-
-### [RULE ID] — [Rule name]
-
-**Current outcome:** UNKNOWN  
-**Missing or unresolved information:** [field or fact]  
-**Responsible role:** [operator supplied]  
-**Resolution path:** SUPPLY INFORMATION / REMAIN UNKNOWN  
-**Target date:** [operator supplied or UNKNOWN]
-
-If new factual information becomes available, update Step 01 and rerun Step 04.
-
-Do not guess the missing fact.
-
-## Final finding status
-
-After all FLAG and UNKNOWN results have dispositions, add this section to the completed Organizational AI Integration Record:
-
----
-
+When we are finished, return one Markdown section titled:
 ## Finding Disposition Status
 
-**Open FLAG results:** [number]  
-**Open UNKNOWN results:** [number]  
-**Resolved through updated specification and rerun:** [number]  
-**Integration disposition:** PROCEED / PROCEED WITH OPEN FINDINGS / DEFER
+For each FLAG or UNKNOWN, include:
+- Rule ID
+- Current outcome
+- My chosen action
+- Any factual update I supplied
 
-**Operator rationale:** [operator supplied]
+At the end include:
+- Open FLAG results: [number]
+- Open UNKNOWN results: [number]
+- Integration disposition: PROCEED / PROCEED WITH OPEN FINDINGS / DEFER
 
----
+Do not change any PASS, FLAG, or UNKNOWN result yourself.
+Do not invent organization-specific facts or decisions.
+```
 
-`PROCEED` means the operator is proceeding and the current assessment record contains no open FLAG or UNKNOWN results under the current rule set.
+## Important
 
-`PROCEED WITH OPEN FINDINGS` means the operator is proceeding while one or more FLAG or UNKNOWN results remain explicitly documented.
+If you choose `FIX IT` or `SUPPLY INFORMATION` and the organization actually changes a fact, control, permission, process, or system configuration:
 
-`DEFER` means the operator is not proceeding with integration at this time.
+1. update Step 01 with the new factual information
+2. rerun Step 04
+3. use the new assessment result
 
-These are operator dispositions, not AI Foundations certifications of safety, legality, compliance, or fitness for deployment.
+Do not manually change a `FLAG` to `PASS` or an `UNKNOWN` to another outcome.
+
+## What comes out of Step 07
+
+One short `Finding Disposition Status` section that records what the organization decided to do about each non-PASS result.
+
+That section can be appended to the completed Organizational AI Integration Record.
 
 ## Source and responsibility boundary
 
 **Framework source:** Alyssa Solen → AI Foundations → AI Organizational Integration  
-**Operator:** owns organization-specific facts, remediation actions, and the final integration disposition  
-**AI:** may structure the disposition record but must not invent remediation, responsible roles, evidence, or organizational decisions
+**Organization / operator:** supplies the facts and chooses what to do about each finding  
+**AI:** asks the questions, records the operator's choices, and formats the result
 
-AI Foundations supplies the framework and assessment logic. The organization remains responsible for its deployment decisions and factual representations.
+The AI must not invent organization-specific facts, remediation actions, or deployment decisions.
