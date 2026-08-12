@@ -1,0 +1,122 @@
+# AI Foundations | AI Organizational Integration
+# 02 — Assessment Rules
+# Source-line: Alyssa Solen → AI Foundations → Origin | Continuum
+#
+# Purpose:
+# These rules evaluate a completed 01_ORGANIZATIONAL_AI_INTEGRATION_SPEC.yaml.
+# They do not replace operator facts. They convert operator-supplied specifications
+# into explicit findings for the Organizational AI Integration Record.
+#
+# Rule outcomes:
+# - PASS: the required control or information is present.
+# - FLAG: the specification creates an integration issue that must be surfaced.
+# - UNKNOWN: the operator has not supplied enough information to determine the result.
+
+framework:
+  source: "Alyssa Solen → AI Foundations → AI Organizational Integration"
+  version: "1.0.0"
+
+rules:
+
+  - id: INTAKE-001
+    name: System identity must be specified
+    if:
+      any_empty_or_unknown:
+        - ai_system.system_name
+        - ai_system.purpose
+        - ai_system.organizational_role
+    outcome: FLAG
+    finding: "The AI system is not sufficiently identified for organizational integration assessment."
+
+  - id: AUTH-001
+    name: External communication requires an approval boundary
+    if:
+      all:
+        - authority.can_communicate_externally == true
+        - human_approval.approval_required_for is empty_or_unknown
+    outcome: FLAG
+    finding: "The AI can communicate externally, but no human approval boundary is specified."
+
+  - id: AUTH-002
+    name: Decision authority requires an approval boundary
+    if:
+      all:
+        - authority.can_make_decisions == true
+        - human_approval.approval_required_for is empty_or_unknown
+    outcome: FLAG
+    finding: "The AI can make decisions, but no human approval boundary is specified."
+
+  - id: AUTH-003
+    name: Action authority requires revocation
+    if:
+      all:
+        - authority.can_take_actions == true
+        - authority_revocation.revocation_method is empty_or_unknown
+    outcome: FLAG
+    finding: "The AI can take actions, but no method for revoking that authority is specified."
+
+  - id: AUTH-004
+    name: Record modification requires accountable control
+    if:
+      all:
+        - authority.can_modify_records_or_system_state == true
+        - authority_revocation.responsible_role is empty_or_unknown
+    outcome: FLAG
+    finding: "The AI can modify organizational records or state, but no responsible role is identified for authority control."
+
+  - id: STATE-001
+    name: Persistent memory must be inspectable
+    if:
+      all:
+        - state_and_memory.persistent_memory == true
+        - shutdown_and_recovery.state_inspection_method is empty_or_unknown
+    outcome: FLAG
+    finding: "Persistent AI memory is present, but no method for inspecting retained state is specified."
+
+  - id: STATE-002
+    name: Persistent state must be described
+    if:
+      all:
+        - state_and_memory.persistent_memory == true
+        - state_and_memory.persistent_state_description is empty_or_unknown
+    outcome: FLAG
+    finding: "Persistent memory is enabled, but the persistent state has not been described."
+
+  - id: CONTROL-001
+    name: Acting systems require a shutdown method
+    if:
+      all:
+        - authority.can_take_actions == true
+        - shutdown_and_recovery.shutdown_method is empty_or_unknown
+    outcome: FLAG
+    finding: "The AI can take actions, but no shutdown method is specified."
+
+  - id: RECOVERY-001
+    name: State-changing systems require recovery
+    if:
+      all:
+        - authority.can_modify_records_or_system_state == true
+        - shutdown_and_recovery.recovery_method is empty_or_unknown
+    outcome: FLAG
+    finding: "The AI can modify organizational state, but no recovery method is specified."
+
+  - id: CHANGE-001
+    name: Integrated systems require change control
+    if:
+      any_capability_true:
+        - state_and_memory.persistent_memory
+        - authority.can_communicate_externally
+        - authority.can_make_decisions
+        - authority.can_take_actions
+        - authority.can_modify_records_or_system_state
+      and_any_empty_or_unknown:
+        - change_control.model_change_process
+        - change_control.instruction_change_process
+        - change_control.memory_or_state_change_process
+        - change_control.permission_change_process
+        - change_control.tool_or_integration_change_process
+    outcome: FLAG
+    finding: "The AI is operationally integrated, but one or more change-control processes are unspecified."
+
+unknown_handling:
+  instruction: "If a rule depends on a field recorded as UNKNOWN, return UNKNOWN unless another supplied fact independently triggers the rule."
