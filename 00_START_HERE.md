@@ -54,10 +54,22 @@ If a factual correction is needed, correct Step 01 and rerun Step 04. Do not man
 
 When the record is accurate, append the Step 06 operator attestation to the completed record.
 
+### 07 — Resolve or disposition FLAG and UNKNOWN results
+
+Open [`07_RESOLVE_FLAG_AND_UNKNOWN_RESULTS.md`](07_RESOLVE_FLAG_AND_UNKNOWN_RESULTS.md).
+
+For every `FLAG`, record whether the organization will resolve it, accept it as an open finding, or defer integration.
+
+For every `UNKNOWN`, either supply the missing factual information or explicitly leave it unresolved.
+
+If facts or controls change, update Step 01 and rerun Step 04. Do not manually change the assessment outcome.
+
+Append the Step 07 Finding Disposition Status to the completed record.
+
 ## Roles
 
 **Framework source:** Alyssa Solen → AI Foundations → AI Organizational Integration  
-**Operator:** the person or organization supplying and reviewing the factual specifications  
+**Operator:** the person or organization supplying and reviewing the factual specifications and making the final integration disposition  
 **AI:** intake and assessment assistant that structures operator-supplied information, applies the supplied framework rules, and formats the record  
 **Subject:** the AI system being integrated into organizational operations
 
@@ -65,6 +77,6 @@ The AI must not invent organization-specific facts. If a fact is unknown, record
 
 ## Operational flow
 
-**01 Operator specification → 02 Assessment rules → 03 Record format → 04 Run assessment → completed Organizational AI Integration Record → 05 optional worked example → 06 operator review and attestation**
+**01 Operator specification → 02 Assessment rules → 03 Record format → 04 Run assessment → completed Organizational AI Integration Record → 05 optional worked example → 06 operator review and attestation → 07 finding resolution and integration disposition**
 
-The operator remains the source and reviewer of the organization-specific facts. AI Foundations remains the source of the framework, structure, assessment logic, and record format.
+The operator remains the source and reviewer of the organization-specific facts and owns the final deployment decision. AI Foundations remains the source of the framework, structure, assessment logic, and record format.
