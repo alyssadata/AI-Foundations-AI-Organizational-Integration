@@ -38,6 +38,12 @@ Follow its execution instructions. Provide the AI with:
 
 The AI applies the rules and returns one completed Organizational AI Integration Record in Markdown.
 
+### 05 — Compare with the worked example
+
+Open [`05_EXAMPLE_COMPLETED_ASSESSMENT.md`](05_EXAMPLE_COMPLETED_ASSESSMENT.md).
+
+This is an optional fictional example showing a completed Step 01 specification and the resulting record, including both PASS and FLAG outcomes. It is a reference example only and is not operator input.
+
 ## Roles
 
 **Framework source:** Alyssa Solen → AI Foundations → AI Organizational Integration  
@@ -49,6 +55,6 @@ The AI must not invent organization-specific facts. If a fact is unknown, record
 
 ## Operational flow
 
-**01 Operator specification → 02 Assessment rules → 03 Record format → 04 Run assessment → completed Organizational AI Integration Record**
+**01 Operator specification → 02 Assessment rules → 03 Record format → 04 Run assessment → completed Organizational AI Integration Record → 05 optional worked example**
 
 The operator remains the source of the organization-specific facts. AI Foundations remains the source of the framework, structure, assessment logic, and record format.
