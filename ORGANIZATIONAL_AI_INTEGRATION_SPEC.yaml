@@ -2,6 +2,27 @@
 # Operator Input Specification
 # Source-line: Alyssa Solen → AI Foundations → Origin | Continuum
 #
+# HOW TO USE THIS FILE
+#
+# 1. Copy this entire file.
+# 2. Paste it into the AI system you are using for this assessment.
+# 3. Add this instruction above or below it:
+#
+#    "Help me complete this AI Organizational Integration specification.
+#    Ask me for the missing information one section at a time.
+#    Do not invent organization-specific facts. If I do not know an answer,
+#    record UNKNOWN. When the intake is complete, return the full completed
+#    YAML specification without changing the field names or framework source."
+#
+# 4. Answer the AI's questions using facts about your organization and the
+#    AI system being integrated.
+# 5. Review the completed specification before using it as assessment input.
+#
+# OPERATOR RESPONSIBILITY
+# The operator is the factual source for organization-specific information.
+# The assisting AI may structure and clarify answers, but it must not invent
+# facts, permissions, controls, access, or system capabilities.
+#
 # Purpose:
 # The operator completes this file with factual specifications about the AI system
 # being integrated into an organization. These operator-supplied facts become the
