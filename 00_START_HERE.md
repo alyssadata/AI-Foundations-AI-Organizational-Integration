@@ -76,17 +76,27 @@ A material change to the model, provider, instructions, role, data access, tools
 
 When a trigger occurs, update Step 01 and rerun Steps 04, 06, and 07. Preserve the prior completed record as the historical record of the earlier configuration.
 
+### 09 — Maintain the organizational AI system register
+
+Open [`09_ORGANIZATIONAL_AI_SYSTEM_REGISTER.md`](09_ORGANIZATIONAL_AI_SYSTEM_REGISTER.md).
+
+Maintain one row for each assessed AI system in the organization.
+
+Record the system ID, system and provider/model, organizational role, operator, most recent assessment date, current status, whether reassessment is required, and the current assessment record.
+
+When a Step 08 trigger occurs, mark the system as requiring reassessment. After the new assessment cycle is completed, update the register to point to the new current record while preserving the prior record as historical evidence.
+
 ## Roles
 
 **Framework source:** Alyssa Solen → AI Foundations → AI Organizational Integration  
-**Operator:** the person or organization supplying and reviewing the factual specifications, making the final integration disposition, and identifying material system changes  
-**AI:** intake and assessment assistant that structures operator-supplied information, applies the supplied framework rules, and formats the record  
+**Operator:** the person or organization supplying and reviewing the factual specifications, making the final integration disposition, identifying material system changes, and maintaining the organizational system register  
+**AI:** intake and assessment assistant that structures operator-supplied information, applies the supplied framework rules, formats the record, and may assist with register formatting  
 **Subject:** the AI system being integrated into organizational operations
 
 The AI must not invent organization-specific facts. If a fact is unknown, record it as `UNKNOWN`.
 
 ## Operational flow
 
-**01 Operator specification → 02 Assessment rules → 03 Record format → 04 Run assessment → completed Organizational AI Integration Record → 05 optional worked example → 06 operator review and attestation → 07 finding resolution and integration disposition → 08 reassessment when material changes occur**
+**01 Operator specification → 02 Assessment rules → 03 Record format → 04 Run assessment → completed Organizational AI Integration Record → 05 optional worked example → 06 operator review and attestation → 07 finding resolution and integration disposition → 08 reassessment when material changes occur → 09 organizational AI system register**
 
-The operator remains the source and reviewer of the organization-specific facts and owns the final deployment decision. AI Foundations remains the source of the framework, structure, assessment logic, record format, and reassessment triggers.
+The operator remains the source and reviewer of the organization-specific facts and owns the final deployment decision. AI Foundations remains the source of the framework, structure, assessment logic, record format, reassessment triggers, and register structure.
