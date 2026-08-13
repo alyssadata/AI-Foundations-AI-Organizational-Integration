@@ -4,17 +4,29 @@ You are finished with the assessment when Step 04 has completed the workflow and
 
 ## What you have at the end
 
-You should have **three finished artifacts**:
+You should have **three finished artifacts**.
 
-### 1. Final Completed Step 01 Specification
+---
 
-A completed YAML specification containing the final organization-specific and AI-system-specific facts used by the assessment.
+## 1. Final Completed Step 01 Specification
 
-This is the factual input record for the assessment.
+This is the completed YAML containing the final organization-specific and AI-system-specific facts used by the assessment.
 
-### 2. Final Organizational AI Integration Record
+### WHAT TO DO WITH THIS
 
-This is the main assessment artifact.
+**Save it with the assessment record.**
+
+This is the factual snapshot of the AI system that was assessed on that date.
+
+Keep it so the organization can later see exactly what facts, permissions, memory, authority, controls, and system configuration the assessment was based on.
+
+If the system changes later, this prior Step 01 remains the historical specification for the earlier assessment. Do not overwrite it.
+
+---
+
+## 2. Final Organizational AI Integration Record
+
+This is the **main assessment artifact**.
 
 It contains:
 
@@ -26,44 +38,73 @@ It contains:
 - the final organizational deployment decision
 - the AI Foundations framework source and required citation
 
-Save this record using the filename produced by Step 04.
+### WHAT TO DO WITH THIS
 
-### 3. Organizational AI System Register Row
+**Save this as the official assessment record for that AI system and configuration.**
 
-A ready-to-paste Markdown row for the organization’s AI system register.
+Use the filename produced by Step 04.
 
-It identifies the assessed system, assessment date, status, deployment decision, reassessment status, and current assessment record.
+This is the document the organization can keep in its internal records, provide to relevant internal stakeholders, use when reviewing the AI system later, and compare against future reassessments.
 
-## What the operator had to do
+Do not replace this record when the system changes. A later assessment should create a new dated record.
 
-The operator did **not** grade, score, count, format, build tables, or manually apply the framework rules.
+---
 
-The operator only:
+## 3. Organizational AI System Register Row
 
-1. supplied organization-specific facts during Step 01
-2. provided completed `01` + `02` + `03` + `04` together
-3. answered simple factual or organizational-choice questions when asked
-4. saved the finished outputs
+This is the ready-to-paste Markdown row summarizing the assessed system.
 
-The AI performed the assessment and output construction.
+It identifies the system, assessment date, current status, deployment decision, reassessment status, and current assessment record.
 
-## What to keep
+### WHAT TO DO WITH THIS
 
-Keep the final completed Step 01 specification and the final Organizational AI Integration Record together as the record of the system configuration assessed on that date.
+**Paste this row into the organization’s master `10_ORGANIZATIONAL_AI_SYSTEM_REGISTER.md` table.**
 
-Do not overwrite an older completed assessment record when the system changes.
+If the organization already maintains its own copy of that register, add or update the row there instead.
+
+For a new system, replace `AI-XXX` with the next available organizational System ID, such as `AI-001`, `AI-002`, or `AI-003`.
+
+That register becomes the organization’s high-level inventory of assessed AI systems. The full assessment record remains the detailed evidence behind the row.
+
+---
+
+# What to keep together
+
+For each assessed AI system, keep:
+
+1. the **final completed Step 01 YAML**
+2. the **final Organizational AI Integration Record**
+3. the system’s current **register entry / System ID**
+
+Together, these show:
+
+**what the system was → what the framework found → what the organization decided → where the current record is tracked.**
 
 ## If the system changes later
 
 Use `08_REASSESSMENT_TRIGGERS.md`.
 
-If a material change triggers reassessment, run the workflow again and create a **new dated assessment record**.
+If a material change triggers reassessment:
 
-The prior record remains the historical record of the earlier system configuration.
+1. run the workflow again
+2. create a **new dated Step 01 specification**
+3. create a **new dated Organizational AI Integration Record**
+4. update the system’s existing register row to point to the new current record
+5. preserve the prior specification and record as historical evidence of the earlier configuration
+
+Do not overwrite the earlier assessment as though the earlier system state never existed.
+
+## What the operator had to do
+
+The operator did **not** grade, score, count, format, build tables, or manually apply the framework rules.
+
+The operator only supplied facts, answered simple organization choices, and saved the finished outputs.
+
+The AI performed the assessment and output construction.
 
 ## In one line
 
-**Paste → answer → assess → decide → output → preserve.**
+**Save the specification → keep the assessment record → add the register row → reassess with a new dated record when the system materially changes.**
 
 ---
 
