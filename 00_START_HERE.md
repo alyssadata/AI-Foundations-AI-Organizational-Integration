@@ -6,94 +6,118 @@ This repository is designed so the operator does **not** grade, score, calculate
 
 The operator supplies organization-specific facts and simple organization choices when asked.
 
-## THE EASY WORKFLOW
+# THE WHOLE EXPERIENCE
 
-You personally use only **Step 01** and **Step 04** for a normal assessment.
+There are only **two paste actions** in a normal assessment.
 
-### 1 — Tell the AI about the system
+## PASTE 1 — Start the guided intake
 
 Open [`01_ORGANIZATIONAL_AI_INTEGRATION_SPEC.yaml`](01_ORGANIZATIONAL_AI_INTEGRATION_SPEC.yaml).
 
-Copy the whole file into the AI.
+Copy the entire file and paste it into the AI.
 
-The AI asks you for the missing facts one question at a time.
+The AI will:
 
-Answer the questions. If you do not know something, say `UNKNOWN`.
+- explain that it is guiding Step 01
+- ask the missing questions ONE AT A TIME
+- use plain language
+- record `UNKNOWN` when the operator does not know an answer
+- build the YAML itself
+- return one completed Step 01 YAML specification
 
-The AI returns the completed Step 01 specification.
+The operator only answers factual questions.
 
-### 2 — Let the AI do the entire assessment
+When Step 01 is finished, the AI is instructed to tell the operator:
 
-Open [`04_RUN_ASSESSMENT.md`](04_RUN_ASSESSMENT.md).
+> Step 01 is complete. Copy the completed YAML above.
+> Next, give the AI these FOUR items together:
+> 1. your completed `01_ORGANIZATIONAL_AI_INTEGRATION_SPEC.yaml`
+> 2. `02_ASSESSMENT_RULES.yaml`
+> 3. `03_ORGANIZATIONAL_AI_INTEGRATION_RECORD_TEMPLATE.md`
+> 4. `04_RUN_ASSESSMENT.md`
+> Step 04 will run the assessment for you. You do not grade or fill anything yourself.
 
-Give the AI:
+## PASTE 2 — Give the AI 01 + 02 + 03 + 04 together
 
-- your completed Step 01 specification
-- [`02_ASSESSMENT_RULES.yaml`](02_ASSESSMENT_RULES.yaml)
-- [`03_ORGANIZATIONAL_AI_INTEGRATION_RECORD_TEMPLATE.md`](03_ORGANIZATIONAL_AI_INTEGRATION_RECORD_TEMPLATE.md)
+Provide these FOUR items together in the same conversation:
 
-Then copy the **one prompt** in Step 04 and paste it into the AI.
+1. the completed Step 01 YAML returned by the AI
+2. [`02_ASSESSMENT_RULES.yaml`](02_ASSESSMENT_RULES.yaml)
+3. [`03_ORGANIZATIONAL_AI_INTEGRATION_RECORD_TEMPLATE.md`](03_ORGANIZATIONAL_AI_INTEGRATION_RECORD_TEMPLATE.md)
+4. [`04_RUN_ASSESSMENT.md`](04_RUN_ASSESSMENT.md)
 
-From there, the AI runs the rest of the workflow.
+You may paste them as text or attach them if the AI interface supports attachments.
 
-## What the AI does for you
+**You do not need to pull a separate prompt out of Step 04.**
+
+Step 04 contains the runner instructions.
+
+If the AI does not have all four items, Step 04 instructs it to stop and ask for the missing assessment files rather than making the operator figure out what to do.
+
+Once all four are present, the AI runs the workflow automatically.
+
+# WHAT THE AI DOES AFTER PASTE 2
 
 The AI:
 
 - applies every assessment rule
 - determines every `PASS`, `FLAG`, and `UNKNOWN`
-- creates the assessment record
-- asks you only to confirm or correct the facts it used
-- handles every FLAG or UNKNOWN one at a time
-- reruns rules when you supply corrected or new facts
-- counts open findings
+- checks the facts with the operator using `CONFIRM / CORRECT`
+- handles FLAG findings one at a time using simple choices
+- handles UNKNOWN findings one at a time using simple choices
+- reruns affected rules after factual updates
+- counts findings itself
 - creates the finding-disposition section
-- asks for the final organization deployment choice
+- asks for the final organizational deployment choice
 - creates the final deployment-decision section
-- creates the ready-to-paste organizational system-register row
+- outputs the final completed Step 01 specification
+- outputs the finished Organizational AI Integration Record
+- outputs the ready-to-paste organizational system-register row
 
-## What you do NOT do
+# WHAT THE OPERATOR DOES NOT DO
 
-You do **not**:
+The operator does **not**:
 
-- score the assessment
-- decide whether a rule is PASS or FLAG
+- grade the assessment
+- decide whether a rule is PASS, FLAG, or UNKNOWN
+- manually apply Step 02
+- manually fill Step 03
 - count findings
-- fill the record template
-- build a disposition table
-- write the operator-review section
-- write the deployment-decision section
-- build the register row
+- build tables
+- write the Step 06 review section
+- write the Step 07 disposition section
+- write the Step 09 deployment section
+- build the Step 10 register row
 
-The AI does those things from the framework rules and the facts you supply.
+The operator only supplies facts and organization decisions the AI cannot legitimately invent.
 
-## What the other numbered files are
+# WHAT THE OTHER FILES ARE
 
-[`02_ASSESSMENT_RULES.yaml`](02_ASSESSMENT_RULES.yaml) — rules the AI applies. You do not score them.
+[`02_ASSESSMENT_RULES.yaml`](02_ASSESSMENT_RULES.yaml) — assessment logic the AI applies.
 
 [`03_ORGANIZATIONAL_AI_INTEGRATION_RECORD_TEMPLATE.md`](03_ORGANIZATIONAL_AI_INTEGRATION_RECORD_TEMPLATE.md) — output structure the AI fills.
 
-[`05_EXAMPLE_COMPLETED_ASSESSMENT.md`](05_EXAMPLE_COMPLETED_ASSESSMENT.md) — fictional example only.
+[`05_EXAMPLE_COMPLETED_ASSESSMENT.md`](05_EXAMPLE_COMPLETED_ASSESSMENT.md) — fictional worked example only.
 
 [`06_OPERATOR_REVIEW_AND_ATTESTATION.md`](06_OPERATOR_REVIEW_AND_ATTESTATION.md) — fact-confirmation logic Step 04 runs automatically.
 
-[`07_RESOLVE_FLAG_AND_UNKNOWN_RESULTS.md`](07_RESOLVE_FLAG_AND_UNKNOWN_RESULTS.md) — FLAG/UNKNOWN handling logic Step 04 runs automatically.
+[`07_RESOLVE_FLAG_AND_UNKNOWN_RESULTS.md`](07_RESOLVE_FLAG_AND_UNKNOWN_RESULTS.md) — finding-handling logic Step 04 runs automatically.
 
-[`08_REASSESSMENT_TRIGGERS.md`](08_REASSESSMENT_TRIGGERS.md) — used later if the system changes; the AI applies the triggers.
+[`08_REASSESSMENT_TRIGGERS.md`](08_REASSESSMENT_TRIGGERS.md) — later reassessment logic if the system changes.
 
 [`09_FINAL_DEPLOYMENT_DECISION.md`](09_FINAL_DEPLOYMENT_DECISION.md) — deployment-decision logic Step 04 runs automatically.
 
-[`10_ORGANIZATIONAL_AI_SYSTEM_REGISTER.md`](10_ORGANIZATIONAL_AI_SYSTEM_REGISTER.md) — register-output logic Step 04 uses to generate the finished row.
+[`10_ORGANIZATIONAL_AI_SYSTEM_REGISTER.md`](10_ORGANIZATIONAL_AI_SYSTEM_REGISTER.md) — register-output structure Step 04 uses.
 
-## In one line
+# IN ONE LINE
 
-**Paste Step 01 → answer factual questions → paste Step 04 → answer simple choices → receive finished outputs.**
+**Paste 01 → answer questions → receive completed 01 → give completed 01 + 02 + 03 + 04 together → answer simple choices → receive finished outputs.**
 
 ## Roles
 
 **Framework source:** Alyssa Solen → AI Foundations → AI Organizational Integration  
 **Operator / organization:** supplies organization-specific facts and organization decisions  
-**AI:** conducts intake, applies rules, calculates assessment outcomes, handles workflow logic, and formats all finished artifacts  
+**AI:** conducts intake, applies rules, calculates assessment outcomes, guides the workflow, and formats finished artifacts  
 **Subject:** the AI system being assessed
 
 The AI must not invent organization-specific facts or make the organization's final deployment decision.
