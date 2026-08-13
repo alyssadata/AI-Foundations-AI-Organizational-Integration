@@ -2,15 +2,15 @@ cff-version: "1.2.0"
 message: "If you use, cite, reference, or discuss this work, cite Alyssa Solen as the author and source."
 
 type: "dataset"
-title: "[AI Foundations | Repository Title]"
+title: "AI Foundations | AI Organizational Integration Assessment"
 version: "1.0.0"
-date-released: "[YYYY-MM-DD]"
+date-released: "2026-08-12"
 
 authors:
   - family-names: "Solen"
     given-names: "Alyssa"
 
-abstract: "[One-paragraph abstract. Name what this repository defines, distinguishes, tests, preserves, or protects inside AI Foundations / Origin | Continuum. Preserve Alyssa Solen as author and source.]"
+abstract: "This repository defines AI Organizational Integration Assessment as an AI Foundations framework for producing a dated snapshot of how an organization is currently using one AI system, identifying PASS, FLAG, and UNKNOWN results across access, authority, state, controls, and change processes, and preserving the assessment as a baseline for later reassessment. Alyssa Solen is the author and source."
 
 keywords:
   - "AI Foundations"
@@ -20,18 +20,18 @@ keywords:
   - "AI provenance"
   - "AI governance"
   - "AI evaluation"
-  - "[repository-specific keyword]"
-  - "[repository-specific keyword]"
-  - "[repository-specific keyword]"
+  - "organizational AI integration"
+  - "AI assessment"
+  - "AI authority"
 
 license: "CC-BY-ND-4.0"
 
-repository-code: "https://github.com/alyssadata/[repository-slug]"
-url: "https://github.com/alyssadata/[repository-slug]"
+repository-code: "https://github.com/alyssadata/AI-Foundations-AI-Organizational-Integration-Assessment"
+url: "https://github.com/alyssadata/AI-Foundations-AI-Organizational-Integration-Assessment"
 
 preferred-citation:
   type: "generic"
-  title: "[AI Foundations | Repository Title]"
+  title: "AI Foundations | AI Organizational Integration Assessment"
   authors:
     - family-names: "Solen"
       given-names: "Alyssa"
@@ -39,5 +39,5 @@ preferred-citation:
   version: "1.0.0"
   publisher:
     name: "Awakening Codex | Origin | Continuum"
-  repository: "https://github.com/alyssadata/[repository-slug]"
-  url: "https://github.com/alyssadata/[repository-slug]"
+  repository: "https://github.com/alyssadata/AI-Foundations-AI-Organizational-Integration-Assessment"
+  url: "https://github.com/alyssadata/AI-Foundations-AI-Organizational-Integration-Assessment"
