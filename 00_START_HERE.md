@@ -1,5 +1,11 @@
 # START HERE — AI Organizational Integration
 
+## What this gives you
+
+**This framework gives you a dated snapshot of where your organization is today with one AI system, where the current gaps or unknowns are, and a baseline you can reassess when the system changes.**
+
+For the plain-language explanation of what the assessment does and what you receive at the end, see [`WHAT_THIS_IS_AND_WHAT_YOU_GET.md`](WHAT_THIS_IS_AND_WHAT_YOU_GET.md).
+
 This repository is designed so the operator does **not** grade, score, calculate, build tables, or manually complete assessment forms.
 
 **The AI does the framework work.**
