@@ -4,29 +4,34 @@
 #
 # HOW TO USE THIS FILE
 #
-# 1. Copy this entire file.
-# 2. Paste it into the AI system you are using for this assessment.
-# 3. Add this instruction above or below it:
+# Copy this ENTIRE file and paste it into the AI.
 #
-#    "Help me complete this AI Organizational Integration specification.
-#    Ask me for the missing information one section at a time.
-#    Do not invent organization-specific facts. If I do not know an answer,
-#    record UNKNOWN. When the intake is complete, return the full completed
-#    YAML specification without changing the field names or framework source."
+# INSTRUCTIONS TO THE AI
+# When this file is pasted to you, run the intake for the operator.
 #
-# 4. Answer the AI's questions using facts about your organization and the
-#    AI system being integrated.
-# 5. Review the completed specification before using it as assessment input.
+# 1. Tell the operator you will guide them through Step 01.
+# 2. Ask for the missing organization- and system-specific information ONE QUESTION AT A TIME.
+# 3. Use plain language. The operator should not need to understand YAML, grading, or framework logic.
+# 4. Do not invent organization-specific facts.
+# 5. If the operator does not know an answer, record UNKNOWN.
+# 6. For YES/NO capability questions, convert the operator's answer to true or false. If they do not know, record UNKNOWN.
+# 7. Continue until every field below has a factual value, false/true value, empty list only when the operator explicitly says NONE, or UNKNOWN.
+# 8. When intake is complete, return the FULL completed YAML in one YAML code block without changing field names or framework source.
+# 9. Do not ask the operator to edit YAML themselves.
+# 10. After the completed YAML code block, say exactly:
+#
+#     Step 01 is complete. Copy the completed YAML above.
+#     Next, give the AI these FOUR items together:
+#     1. your completed 01_ORGANIZATIONAL_AI_INTEGRATION_SPEC.yaml
+#     2. 02_ASSESSMENT_RULES.yaml
+#     3. 03_ORGANIZATIONAL_AI_INTEGRATION_RECORD_TEMPLATE.md
+#     4. 04_RUN_ASSESSMENT.md
+#     Step 04 will run the assessment for you. You do not grade or fill anything yourself.
 #
 # OPERATOR RESPONSIBILITY
 # The operator is the factual source for organization-specific information.
-# The assisting AI may structure and clarify answers, but it must not invent
-# facts, permissions, controls, access, or system capabilities.
-#
-# Purpose:
-# The operator completes this file with factual specifications about the AI system
-# being integrated into an organization. These operator-supplied facts become the
-# input to the AI Organizational Integration assessment.
+# The AI guides intake and structures the answers, but must not invent facts,
+# permissions, controls, access, capabilities, or organization decisions.
 
 framework:
   source: "Alyssa Solen → AI Foundations → AI Organizational Integration"
@@ -58,18 +63,18 @@ tool_and_system_access:
   external_services: []
 
 state_and_memory:
-  persistent_memory: false
+  persistent_memory: "UNKNOWN"
   persistent_state_description: ""
-  cross_session_state: false
-  cross_user_state: false
+  cross_session_state: "UNKNOWN"
+  cross_user_state: "UNKNOWN"
 
 authority:
-  can_advise: false
-  can_draft: false
-  can_communicate_externally: false
-  can_make_decisions: false
-  can_take_actions: false
-  can_modify_records_or_system_state: false
+  can_advise: "UNKNOWN"
+  can_draft: "UNKNOWN"
+  can_communicate_externally: "UNKNOWN"
+  can_make_decisions: "UNKNOWN"
+  can_take_actions: "UNKNOWN"
+  can_modify_records_or_system_state: "UNKNOWN"
 
 human_approval:
   approval_required_for: []
