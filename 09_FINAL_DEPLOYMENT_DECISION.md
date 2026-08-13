@@ -1,77 +1,62 @@
-# 09 — FINAL DEPLOYMENT DECISION
+# 09 — FINAL DEPLOYMENT DECISION LOGIC
 
-Use this step after the operator has completed Steps 06 and 07 for the current assessment record.
+The operator does **not** manually complete this file.
 
-## Purpose
+Step 04 runs this step automatically after the assessment and any FLAG/UNKNOWN handling are complete.
 
-This step records the organization's final operating decision for the assessed AI system.
+## What the AI asks
 
-The assessment findings do not make the deployment decision automatically. The organization remains responsible for deciding whether and under what conditions the system will operate.
+The AI asks for one final organization decision.
 
-## Allowed deployment decisions
-
-Record exactly one:
+If no FLAG or UNKNOWN results remain, the AI offers exactly:
 
 - `APPROVED TO OPERATE`
+- `INTEGRATION DEFERRED`
+- `RETIRED`
+
+If one or more FLAG or UNKNOWN results remain, the AI offers exactly:
+
 - `APPROVED TO OPERATE — OPEN FINDINGS`
 - `INTEGRATION DEFERRED`
 - `RETIRED`
 
-### APPROVED TO OPERATE
+The operator chooses one.
 
-Use when the organization has completed its assessment and chooses to operate the system without unresolved findings it is treating as open.
+The operator does not fill a deployment form.
 
-### APPROVED TO OPERATE — OPEN FINDINGS
+The AI does not choose the organization's deployment decision.
 
-Use when the organization chooses to operate the system while one or more Step 07 findings remain explicitly open.
+## What the AI does automatically
 
-The open findings must remain recorded in the completed Organizational AI Integration Record.
+After the operator gives the decision, the AI generates the complete Final Deployment Decision section and inserts it into the final Organizational AI Integration Record.
 
-### INTEGRATION DEFERRED
+The AI also carries the same decision into the generated Step 10 register row.
 
-Use when the organization decides the system should not enter or continue the intended integration state at this time.
+## Required AI-generated record section
 
-### RETIRED
-
-Use when the organization has ended operation of the assessed system or configuration.
-
-## Final Deployment Decision Record
-
-Append the following section to the completed Organizational AI Integration Record:
-
----
-
+```md
 ## Final Deployment Decision
 
-**System ID:** [existing AI-### if already assigned; otherwise assign in Step 10]  
-**AI system:** [system name]  
-**Organization:** [organization name]  
-**Operator / decision recorder:** [name]  
-**Decision date:** [YYYY-MM-DD]  
-**Assessment record:** [current record filename or location]
+**System ID:** [existing AI-### or AI-XXX]
+**AI system:** [from operator-supplied facts]
+**Organization:** [from operator-supplied facts]
+**Operator / decision recorder:** [from operator-supplied facts]
+**Decision date:** [assessment/final decision date]
+**Assessment record:** [generated record filename]
 
-**Deployment decision:** APPROVED TO OPERATE / APPROVED TO OPERATE — OPEN FINDINGS / INTEGRATION DEFERRED / RETIRED
+**Deployment decision:** [operator's selected allowed value]
 
-**Open findings at decision time:** [NONE / list rule IDs and findings]
+**Open findings at decision time:** [AI-generated from current assessment]
 
-**Operating conditions or restrictions:** [NONE / operator-supplied conditions]
+**Operating conditions or restrictions:** [operator supplied, or NONE]
+```
 
-**Decision notes:** [optional operator-supplied notes]
-
----
-
-## Next step
-
-After recording the decision, go to `10_ORGANIZATIONAL_AI_SYSTEM_REGISTER.md` and add or update the system's row.
-
-If this is a new system, assign the next sequential System ID in Step 10 and use that same ID in the completed assessment record.
-
-If a Step 08 reassessment trigger occurs after approval, run the assessment cycle again and record a new Step 09 deployment decision for the changed configuration.
+The AI may ask one optional question for operating conditions or restrictions. If the operator supplies none, record `NONE`.
 
 ## Source and responsibility boundary
 
 **Framework source:** Alyssa Solen → AI Foundations → AI Organizational Integration  
-**Organization / operator:** owns and records the final deployment decision  
-**AI:** may format the decision record from operator-supplied information but must not choose, infer, or invent the organization's deployment decision
+**Organization / operator:** supplies the final deployment decision  
+**AI:** presents the valid choices and generates the finished decision record
 
-The final deployment decision is an organization-supplied decision recorded under the AI Foundations AI Organizational Integration framework. It is not an approval, certification, or deployment decision issued by AI Foundations.
+The decision is organization-supplied. It is not an approval or certification issued by AI Foundations.
