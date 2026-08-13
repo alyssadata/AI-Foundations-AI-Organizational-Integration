@@ -109,6 +109,8 @@ The operator only supplies facts and organization decisions the AI cannot legiti
 
 [`10_ORGANIZATIONAL_AI_SYSTEM_REGISTER.md`](10_ORGANIZATIONAL_AI_SYSTEM_REGISTER.md) — register-output structure Step 04 uses.
 
+[`99_WRAP_UP_SUMMARY.md`](99_WRAP_UP_SUMMARY.md) — final summary of what the operator has in hand, what to save, and what to do if the system changes later.
+
 # IN ONE LINE
 
 **Paste 01 → answer questions → receive completed 01 → give completed 01 + 02 + 03 + 04 together → answer simple choices → receive finished outputs.**
