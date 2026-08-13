@@ -1,89 +1,86 @@
-# 07 — HANDLE FLAG AND UNKNOWN RESULTS
+# 07 — FLAG AND UNKNOWN HANDLING LOGIC
 
-Use this step only if the completed Organizational AI Integration Record contains one or more `FLAG` or `UNKNOWN` results.
+The operator does **not** manually complete this file.
 
-If every result is `PASS`, skip Step 07 and continue to Step 09.
+Step 04 runs this step automatically.
 
-## What this step does
+If every assessment result is `PASS`, the AI skips Step 07.
 
-For each non-PASS result, the organization makes one simple choice.
+## If the AI finds a FLAG
 
-### If the result is FLAG
+The AI handles FLAG results one at a time and asks the operator to choose only:
 
-Choose one:
+- `FIX IT`
+- `KEEP OPEN`
+- `DEFER`
 
-- `FIX IT` — the organization will change the relevant control, permission, process, or system configuration.
-- `KEEP OPEN` — the organization is not fixing it now and wants the finding to remain visible.
-- `DEFER` — the organization does not want to proceed with this integration yet.
+The AI explains the finding in plain language before asking for the choice.
 
-### If the result is UNKNOWN
+### FIX IT
 
-Choose one:
+The AI asks what factual control, permission, process, or system configuration has actually changed.
 
-- `SUPPLY INFORMATION` — provide the missing factual information.
-- `LEAVE UNKNOWN` — the information is not currently available.
+The operator supplies the fact.
 
-## Easiest way to do Step 07
+The AI updates the working specification and reruns the affected assessment rules itself.
 
-Paste your completed Organizational AI Integration Record into the AI.
+### KEEP OPEN
 
-Then copy and paste this prompt:
+The AI keeps the FLAG visible in the final record.
 
-```text
-Help me complete Step 07 of the AI Foundations AI Organizational Integration framework.
+### DEFER
 
-Read the completed Organizational AI Integration Record I provided.
+The AI records that integration is deferred.
 
-Find every result marked FLAG or UNKNOWN.
+## If the AI finds an UNKNOWN
 
-Ask me about them one at a time.
+The AI handles UNKNOWN results one at a time and asks the operator to choose only:
 
-For each FLAG, ask me to choose exactly one:
-FIX IT / KEEP OPEN / DEFER
+- `SUPPLY INFORMATION`
+- `LEAVE UNKNOWN`
 
-For each UNKNOWN, ask me to choose exactly one:
-SUPPLY INFORMATION / LEAVE UNKNOWN
+### SUPPLY INFORMATION
 
-If I choose FIX IT or SUPPLY INFORMATION, ask me for the factual change or missing information. Do not invent it.
+The AI asks for the missing fact, updates the working specification, and reruns the affected rules itself.
 
-When we are finished, return one Markdown section titled:
+### LEAVE UNKNOWN
+
+The AI keeps the UNKNOWN visible in the final record.
+
+## What the AI does automatically
+
+The AI:
+
+- identifies every FLAG and UNKNOWN
+- explains each finding
+- asks the choices one at a time
+- records the operator's answers
+- updates the working specification when new facts are supplied
+- reruns affected rules
+- counts remaining FLAG and UNKNOWN results
+- determines whether the finding status is `PROCEED`, `PROCEED WITH OPEN FINDINGS`, or `DEFER` from the operator's choices
+- generates the complete Finding Disposition Status section
+
+The operator does not score, count, build a table, or write the disposition section.
+
+## Required AI-generated record section
+
+When Step 07 applies, the AI generates:
+
+```md
 ## Finding Disposition Status
 
-For each FLAG or UNKNOWN, include:
-- Rule ID
-- Current outcome
-- My chosen action
-- Any factual update I supplied
+[one AI-formatted entry for each FLAG or UNKNOWN]
 
-At the end include:
-- Open FLAG results: [number]
-- Open UNKNOWN results: [number]
-- Integration disposition: PROCEED / PROCEED WITH OPEN FINDINGS / DEFER
-
-Do not change any PASS, FLAG, or UNKNOWN result yourself.
-Do not invent organization-specific facts or decisions.
+**Open FLAG results:** [AI calculated]
+**Open UNKNOWN results:** [AI calculated]
+**Integration disposition:** PROCEED / PROCEED WITH OPEN FINDINGS / DEFER
 ```
-
-## Important
-
-If you choose `FIX IT` or `SUPPLY INFORMATION` and the organization actually changes a fact, control, permission, process, or system configuration:
-
-1. update Step 01 with the new factual information
-2. rerun Step 04
-3. use the new assessment result
-
-Do not manually change a `FLAG` to `PASS` or an `UNKNOWN` to another outcome.
-
-## What comes out of Step 07
-
-One short `Finding Disposition Status` section that records what the organization decided to do about each non-PASS result.
-
-That section can be appended to the completed Organizational AI Integration Record.
 
 ## Source and responsibility boundary
 
 **Framework source:** Alyssa Solen → AI Foundations → AI Organizational Integration  
-**Organization / operator:** supplies the facts and chooses what to do about each finding  
-**AI:** asks the questions, records the operator's choices, and formats the result
+**Operator:** supplies organization-specific facts and simple organization choices  
+**AI:** performs finding handling, rule reruns, counting, and formatting
 
-The AI must not invent organization-specific facts, remediation actions, or deployment decisions.
+The AI must not invent organization-specific facts or organization decisions.
