@@ -1,101 +1,60 @@
-# 08 — REASSESSMENT TRIGGERS
+# 08 — REASSESSMENT TRIGGER LOGIC
 
-Use this step after the organization has completed its initial assessment and dispositioned any FLAG or UNKNOWN results.
+The operator does **not** manually grade reassessment triggers.
 
-## Purpose
+Use this file later, after an AI system has already been assessed, when something about the system may have changed.
 
-An Organizational AI Integration Record describes a specific system under a specific set of operator-supplied conditions.
+## Easiest use
 
-When those conditions materially change, the existing record may no longer describe the system being operated.
+Give the AI:
 
-This step defines when the organization should update Step 01 and rerun the assessment.
+1. the prior completed Organizational AI Integration Record
+2. the current facts or description of what changed
+3. this Step 08 file
 
-## Reassessment is triggered when any of the following materially changes
+Then ask:
 
-### Model or provider
+```text
+Apply Step 08 to the prior assessment record and the current facts I supplied.
+Tell me whether reassessment is REQUIRED or NOT REQUIRED under these triggers.
+Identify the specific changed facts that triggered the result.
+Do not invent changes I did not supply.
+If reassessment is required, tell me to rerun the Step 04 complete workflow using the updated facts.
+```
 
-- underlying model
-- model version
-- model provider
-- hosted versus local deployment
-- system architecture that changes model behavior or access
+## Reassessment is REQUIRED when any of these materially changes
 
-### Instructions or organizational role
+- underlying model, model version, provider, hosting, or system architecture
+- system instructions, operating instructions, purpose, organizational role, or workflow responsibilities
+- internal, external, sensitive, or restricted data access
+- tools, APIs, internal systems, external services, credentials, permissions, write access, or execution capability
+- persistent memory, memory scope, cross-session state, cross-user state, retention, inspection, deletion, or recovery
+- external communication authority, decision authority, action authority, record/state modification authority, or human approval boundaries
+- authority revocation, responsible control role, shutdown, state inspection, or recovery methods
+- department, workflow, product, business unit, operating environment, or materially different organizational responsibilities
+- movement from an isolated AI tool into persistent organizational systems or operational state
 
-- system instructions
-- operating instructions
-- assigned purpose
-- organizational role
-- workflow responsibilities
+## If reassessment is REQUIRED
 
-### Data access
+The AI should:
 
-- new internal data access
-- new external data access
-- access to sensitive or restricted data
-- expansion or removal of datasets, repositories, records, or knowledge sources
+1. identify which operator-supplied facts changed
+2. carry those current facts into a new working Step 01 specification
+3. rerun the complete Step 04 workflow
+4. generate a new assessment record
+5. preserve the prior record as historical evidence of the earlier configuration
+6. generate an updated Step 10 register row
 
-### Tool and system access
+The operator does not manually rescore the old record.
 
-- new tools
-- new APIs
-- new internal systems
-- new external services
-- new credentials or permissions
-- expanded write or execution capability
+## If reassessment is NOT REQUIRED
 
-### Memory or persistent state
-
-- persistent memory enabled or disabled
-- memory scope changed
-- cross-session state changed
-- cross-user state changed
-- retention, inspection, deletion, or recovery method changed
-
-### Authority
-
-- ability to communicate externally changes
-- decision authority changes
-- action authority changes
-- ability to modify records or organizational state changes
-- human approval boundaries change
-
-### Control and recovery
-
-- authority revocation method changes
-- responsible control role changes
-- shutdown method changes
-- state inspection method changes
-- recovery method changes
-
-### Integration environment
-
-- the AI is moved into a new department, workflow, product, business unit, or operating environment
-- the same AI system is given materially different organizational responsibilities
-- previously isolated AI becomes connected to persistent organizational systems or operational state
-
-## What to do when a trigger occurs
-
-1. Open `01_ORGANIZATIONAL_AI_INTEGRATION_SPEC.yaml`.
-2. Update only the operator-supplied facts that changed.
-3. Set a new assessment date.
-4. Rerun Step 04 using the current Step 02 rules and Step 03 record template.
-5. Complete Step 06 operator review again.
-6. Complete Step 07 for any new FLAG or UNKNOWN results.
-7. Preserve the prior completed record as the historical record of the earlier configuration.
-
-Do not overwrite an older completed assessment record as though the earlier system state never existed.
-
-## No-trigger case
-
-If none of the assessed facts have materially changed, Step 08 does not itself require a new assessment.
-
-An organization may still choose to reassess on its own schedule.
+The prior assessment remains current under Step 08 unless the organization chooses to reassess anyway.
 
 ## Source and responsibility boundary
 
 **Framework source:** Alyssa Solen → AI Foundations → AI Organizational Integration  
-**Operator:** identifies and supplies factual changes to the organization-specific system configuration  
-**AI:** may assist with updating the specification and rerunning the supplied assessment rules
+**Operator:** supplies the facts about what changed  
+**AI:** compares those supplied changes against the Step 08 triggers and formats the result
 
-AI Foundations defines the reassessment triggers and assessment structure. The operator remains responsible for identifying whether the deployed system or organizational conditions have materially changed.
+The AI must not invent system changes that the operator did not supply.
