@@ -1,84 +1,48 @@
-# 10 — ORGANIZATIONAL AI SYSTEM REGISTER
+# 10 — ORGANIZATIONAL AI SYSTEM REGISTER OUTPUT
 
-Use this register to maintain one organization-level inventory of AI systems that have entered the AI Foundations AI Organizational Integration assessment workflow.
+The operator does **not** manually build the register row.
 
-This file is a tracking record. It does not replace the completed Organizational AI Integration Record for any individual system.
+Step 04 generates a ready-to-paste register row automatically after the final deployment decision is recorded.
 
-## Purpose
+## What the AI generates
 
-The register gives the organization one place to identify:
-
-- which AI systems are being integrated or operated
-- who the recorded operator is for each system
-- the current assessment status
-- the current deployment decision
-- the most recent assessment date
-- the current completed assessment record
-- whether reassessment is required
-
-## How to use this register
-
-After Step 09, add or update one row for the assessed AI system.
-
-When Step 08 identifies a reassessment trigger, change `Reassessment Required` to `YES` until a new assessment cycle is completed.
-
-Do not overwrite or delete prior completed assessment records. The register should point to the current record while prior records remain preserved as historical evidence of earlier configurations.
-
-## Allowed status values
-
-Use one of these values in `Current Status`:
-
-- `ASSESSED — NO OPEN FLAGS`
-- `ASSESSED — OPEN FLAG(S)`
-- `ASSESSED — UNKNOWN(S) REMAIN`
-- `INTEGRATION DEFERRED`
-- `REASSESSMENT REQUIRED`
-- `RETIRED`
-
-## Allowed deployment decision values
-
-Use one of these values in `Deployment Decision`:
-
-- `APPROVED TO OPERATE`
-- `APPROVED TO OPERATE — OPEN FINDINGS`
-- `INTEGRATION DEFERRED`
-- `RETIRED`
-
-## Organizational AI System Register
+For the completed assessment, the AI produces one Markdown table row with:
 
 | System ID | AI System | Provider / Model | Organizational Role | Operator | Last Assessment Date | Current Status | Deployment Decision | Reassessment Required | Current Assessment Record |
 |---|---|---|---|---|---|---|---|---|---|
-| AI-001 | [system name] | [provider / model] | [organizational role] | [operator name] | [YYYY-MM-DD] | [allowed status] | [Step 09 decision] | YES / NO | [record filename or location] |
 
-Add one row per AI system.
+The AI fills every value from the current completed assessment and final deployment decision.
 
-## System ID rule
+If an existing System ID was supplied, use it.
 
-Assign system IDs sequentially within the organization:
+If this is a new system and no System ID was supplied, use `AI-XXX` as a placeholder so the organization can assign its next sequential ID without rebuilding the row.
 
-`AI-001`, `AI-002`, `AI-003`, and so on.
+For a newly completed assessment, set `Reassessment Required` to `NO`.
 
-If Step 09 was completed for a new system before an ID existed, assign the ID here and add the same ID to the completed assessment record.
+## AI-derived Current Status
 
-## Updating a system entry
+The AI derives `Current Status` from the final current record:
 
-After a reassessment:
+- no open FLAG or UNKNOWN results + approved → `ASSESSED — NO OPEN FLAGS`
+- open FLAG result(s) → `ASSESSED — OPEN FLAG(S)`
+- no open FLAG but one or more UNKNOWN results → `ASSESSED — UNKNOWN(S) REMAIN`
+- deployment decision is deferred → `INTEGRATION DEFERRED`
+- deployment decision is retired → `RETIRED`
 
-1. preserve the prior completed assessment record
-2. complete the new assessment cycle
-3. complete Step 09 again for the changed configuration
-4. update `Last Assessment Date`
-5. update `Current Status`
-6. update `Deployment Decision`
-7. set `Reassessment Required` to `NO` if the triggering change has been reassessed
-8. update `Current Assessment Record` to the new completed record
+The operator does not calculate this status.
 
-If the system is no longer operated, set `Current Status` and `Deployment Decision` to `RETIRED` and preserve its historical records.
+## Reassessment
+
+When Step 08 later identifies a material change, the AI should generate an updated register row with `Reassessment Required` set to `YES` until the new assessment is completed.
+
+After reassessment, the AI generates a new current row pointing to the new assessment record.
+
+Prior completed assessment records must remain preserved as historical records of earlier configurations.
 
 ## Source and responsibility boundary
 
 **Framework source:** Alyssa Solen → AI Foundations → AI Organizational Integration  
-**Organization / operator:** supplies and maintains organization-specific register entries and deployment decisions  
-**AI:** may assist with formatting or updating the register from operator-reviewed records, but must not invent system status, operator identity, dates, deployment decisions, or record references
+**Operator / organization:** supplies the underlying organization-specific facts and maintains its register  
+**AI:** derives the register status from the completed framework record and generates the ready-to-paste row
 
-The register is an organizational tracking artifact generated under the AI Foundations AI Organizational Integration framework. Organization-specific entries remain operator-supplied facts.
+The AI must not invent organization-specific facts, an existing System ID, or a deployment decision.
