@@ -10,6 +10,33 @@
 
 ---
 
+## What This Is — In Plain English
+
+**AI Organizational Integration gives an organization a dated snapshot of where it is today with one AI system.**
+
+It shows how the organization is currently using the system, what access, memory, authority, tools, controls, and recovery mechanisms are in place, and where the current gaps or unknowns are.
+
+The framework is designed to answer four practical questions:
+
+- **Where are we today with this AI system?**
+- **What is this AI system currently able and allowed to do inside the organization?**
+- **Where are the gaps, missing controls, or unknowns in the current setup?**
+- **What baseline should we preserve so we can see what changes later?**
+
+The operator supplies organization-specific facts. The AI applies the framework rules and produces the assessment.
+
+At the end, the organization receives:
+
+1. a final factual specification of the assessed system
+2. a completed Organizational AI Integration Record showing `PASS`, `FLAG`, and `UNKNOWN` findings and the organization's deployment decision
+3. a ready-to-paste system-register entry for organizational tracking
+
+If the system materially changes later, the framework can be run again to create a new dated snapshot and compare the changed configuration against the earlier record.
+
+See [`WHAT_THIS_IS_AND_WHAT_YOU_GET.md`](WHAT_THIS_IS_AND_WHAT_YOU_GET.md) for the full plain-language explanation and [`00_START_HERE.md`](00_START_HERE.md) to run the assessment.
+
+---
+
 ## Repository Purpose
 
 This repository establishes **AI Organizational Integration** as an AI Foundations research domain: the study of what organizations need to understand when they move from merely using AI through isolated tools or chatbot interfaces to integrating AI systems into organizational operations.
